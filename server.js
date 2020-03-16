@@ -95,6 +95,7 @@ router.post("/users/form-with-image", (req, res) => {
     var uploadedFileName = uploadedFileObject.name;
     var nowTime = Date.now();
     var newFileName = `${nowTime}_${uploadedFileName}`;
+    console.log(uploadedFileObject.mimetype);
 
     uploadedFileObject.mv(`public/${newFileName}`).then(
       params => {
